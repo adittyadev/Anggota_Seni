@@ -1,0 +1,136 @@
+/*=========================================
+TABLET
+=========================================*/
+
+@media (max-width: 900px) {
+  .container {
+    padding: 44px 40px;
+
+    max-width: 680px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
+
+/*=========================================
+MOBILE
+=========================================*/
+
+@media (max-width: 768px) {
+  .page {
+    padding: 22px;
+  }
+
+  .container {
+    padding: 32px 26px;
+
+    border-radius: 18px;
+  }
+
+  .container::before,
+  .container::after {
+    width: 18px;
+
+    height: 18px;
+  }
+
+  h1 {
+    font-size: 30px;
+
+    padding-bottom: 18px;
+
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+
+    padding-bottom: 16px;
+
+    margin-bottom: 18px;
+  }
+
+  p {
+    font-size: 14.5px;
+
+    margin-bottom: 26px;
+  }
+
+  .logo {
+    width: 110px;
+  }
+
+  .logo-box p {
+    font-size: 15px;
+
+    letter-spacing: 1.6px;
+  }
+
+  button {
+    width: 100%;
+
+    padding: 15px 28px;
+
+    margin-top: 12px;
+  }
+
+  .button-group {
+    flex-direction: column-reverse;
+
+    gap: 12px;
+
+    margin-top: 32px;
+  }
+
+  .question-card {
+    padding: 20px 20px;
+
+    margin-bottom: 18px;
+  }
+
+  .question-card h3 {
+    font-size: 17px;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 14px 16px;
+
+    font-size: 14.5px;
+  }
+
+  .progress {
+    margin-bottom: 32px;
+  }
+
+  .success {
+    font-size: 72px;
+
+    margin-bottom: 20px;
+  }
+}
+
+/*=========================================
+SMALL MOBILE
+=========================================*/
+
+@media (max-width: 380px) {
+  .container {
+    padding: 26px 18px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .logo {
+    width: 92px;
+  }
+}

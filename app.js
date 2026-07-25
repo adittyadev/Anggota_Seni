@@ -138,10 +138,6 @@ document.getElementById("backFromLoading").onclick = () => {
   goTo("question2");
 };
 
-document.getElementById("backFromFinish").onclick = () => {
-  goTo("question2");
-};
-
 document.getElementById("submitForm").onclick = async () => {
   for (let i = 11; i <= 20; i++) {
     answers["q" + i] = document.getElementById("answer" + i).value;

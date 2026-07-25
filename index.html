@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>UKM SENJA</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="css/animation.css" />
+
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+
+  <body>
+    <!-- ================================================= -->
+    <!-- Splash -->
+    <!-- ================================================= -->
+
+    <section id="splash" class="page active">
+      <div id="particles-js"></div>
+
+      <div class="logo-box">
+        <img src="logo.png" class="logo" />
+
+        <h1>UKM SENJA</h1>
+
+        <p>Karakter Menciptakan Nama</p>
+
+        <div class="loader"></div>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- ABOUT -->
+    <!-- ================================================= -->
+
+    <section id="about" class="page">
+      <div class="container">
+        <h1>Mengenal Karakter Anggota Seni UKM SENJA</h1>
+
+        <p>
+          Website ini bertujuan untuk mengenali karakteristik, kepribadian,
+          serta potensi yang dimiliki oleh setiap anggota seni UKM SENJA melalui
+          serangkaian pertanyaan. Hasil jawaban akan menjadi bahan analisis
+          dalam memahami karakter masing-masing anggota sebagai dasar
+          pengembangan diri dan organisasi.
+        </p>
+
+        <button id="btnMulai">Mulai Menjawab</button>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- BIODATA -->
+    <!-- ================================================= -->
+
+    <section id="identity" class="page">
+      <div class="container">
+        <h2>Identitas Peserta</h2>
+
+        <form id="identityForm">
+          <input type="text" id="nama" placeholder="Nama Lengkap" required />
+
+          <input type="text" id="nobp" placeholder="NOBP" required />
+
+          <select id="divisi">
+            <option value="">Pilih Divisi</option>
+
+            <option>Seni Musik</option>
+
+            <option>Seni Tari</option>
+
+            <option>Seni Teater</option>
+
+            <option>Seni Rupa</option>
+          </select>
+
+          <textarea id="alasan" placeholder="Alasan Masuk UKM SENJA"></textarea>
+
+          <div class="button-group">
+            <button type="button" id="backToAbout">← Kembali</button>
+
+            <button type="button" id="toQuestion1">Berikutnya →</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- PERTANYAAN 1-10 -->
+    <!-- ================================================= -->
+
+    <section id="question1" class="page">
+      <div class="container">
+        <h2>Pertanyaan 1 - 10</h2>
+
+        <div class="progress">
+          <div class="progress-bar" style="width: 50%">50%</div>
+        </div>
+
+        <div id="questionPage1">
+          <!-- Javascript -->
+        </div>
+
+        <div class="button-group">
+          <button id="backToIdentity">← Kembali</button>
+
+          <button id="nextQuestion">Berikutnya →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- PERTANYAAN 11-20 -->
+    <!-- ================================================= -->
+
+    <section id="question2" class="page">
+      <div class="container">
+        <h2>Pertanyaan 11 - 20</h2>
+
+        <div class="progress">
+          <div class="progress-bar" style="width: 100%">100%</div>
+        </div>
+
+        <div id="questionPage2">
+          <!-- Javascript -->
+        </div>
+
+        <div class="button-group">
+          <button id="backQuestion">← Kembali</button>
+
+          <button id="submitForm">Kirim</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- LOADING -->
+    <!-- ================================================= -->
+
+    <section id="loading" class="page">
+      <div class="container">
+        <div class="loader-big"></div>
+
+        <h2>Sedang Menganalisis Karakter...</h2>
+
+        <p>Mohon tunggu sebentar</p>
+
+        <button id="backFromLoading">← Kembali</button>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- THANK YOU -->
+    <!-- ================================================= -->
+
+    <section id="finish" class="page">
+      <div class="container">
+        <div class="success">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <h1>Terima Kasih</h1>
+
+        <p>Jawaban Anda berhasil dikirim.</p>
+
+        <button id="backFromFinish">← Kembali</button>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- CUSTOM ALERT -->
+    <!-- ================================================= -->
+
+    <div id="customAlert" class="alert-overlay">
+      <div class="alert-box">
+        <div class="alert-icon">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+
+        <p class="alert-message"></p>
+
+        <button id="alertOkBtn">OK</button>
+      </div>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- JS -->
+    <!-- ================================================= -->
+
+    <script src="library/particles.min.js"></script>
+
+    <script src="library/jspdf.min.js"></script>
+
+    <script src="library/lottie.min.js"></script>
+
+    <script src="js/questions.js"></script>
+
+    <script src="js/router.js"></script>
+
+    <script src="js/form.js"></script>
+
+    <script src="js/pdf.js"></script>
+
+    <script src="js/api.js"></script>
+
+    <script src="js/animation.js"></script>
+
+    <script src="js/alert.js"></script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

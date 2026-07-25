@@ -13,6 +13,19 @@ function on(id, handler) {
   el.onclick = handler;
 }
 
+/* cek apakah semua textarea jawaban dalam rentang tertentu sudah terisi */
+function semuaJawabanTerisi(mulai, akhir) {
+  for (let i = mulai; i <= akhir; i++) {
+    const field = document.getElementById("answer" + i);
+
+    if (!field || field.value.trim() === "") {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 /* =========================================
    SIMPAN / MUAT / HAPUS PROGRES
 ========================================= */
@@ -127,6 +140,11 @@ on("backToIdentity", () => {
 });
 
 on("nextQuestion", () => {
+  if (!semuaJawabanTerisi(1, 10)) {
+    showAlert("Lengkapi jawaban terlebih dahulu.");
+    return;
+  }
+
   for (let i = 1; i <= 10; i++) {
     answers["q" + i] = document.getElementById("answer" + i).value;
   }
@@ -148,6 +166,11 @@ on("backFromLoading", () => {
 });
 
 on("submitForm", async () => {
+  if (!semuaJawabanTerisi(11, 20)) {
+    showAlert("Lengkapi jawaban terlebih dahulu.");
+    return;
+  }
+
   for (let i = 11; i <= 20; i++) {
     answers["q" + i] = document.getElementById("answer" + i).value;
   }

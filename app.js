@@ -1,5 +1,18 @@
 const STORAGE_KEY = "senja_progress";
 
+/* pasang event listener dengan aman — kalau elemen tidak ditemukan,
+   cukup catat peringatan di console, tidak menghentikan seluruh script */
+function on(id, handler) {
+  const el = document.getElementById(id);
+
+  if (!el) {
+    console.warn(`Elemen dengan id "${id}" tidak ditemukan di halaman.`);
+    return;
+  }
+
+  el.onclick = handler;
+}
+
 /* =========================================
    SIMPAN / MUAT / HAPUS PROGRES
 ========================================= */
@@ -78,67 +91,63 @@ window.onload = () => {
   }
 };
 
-document.getElementById("btnMulai").onclick = () => {
+on("btnMulai", () => {
   goTo("identity");
-};
+});
 
-document.getElementById("backToAbout").onclick = () => {
+on("backToAbout", () => {
   goTo("about");
-};
+});
 
-document.getElementById("toQuestion1").onclick = () => {
+on("toQuestion1", () => {
   const nama = document.getElementById("nama").value;
-
   const nobp = document.getElementById("nobp").value;
-
   const divisi = document.getElementById("divisi").value;
 
   if (nama == "" || nobp == "" || divisi == "") {
     showAlert("Lengkapi identitas terlebih dahulu.");
-
     return;
   }
 
   answers.nama = nama;
   answers.nobp = nobp;
   answers.divisi = divisi;
-
   answers.alasan = document.getElementById("alasan").value;
 
   goTo("question1");
-};
+});
 
-document.getElementById("backToIdentity").onclick = () => {
+on("backToIdentity", () => {
   for (let i = 1; i <= 10; i++) {
     const field = document.getElementById("answer" + i);
     if (field) answers["q" + i] = field.value;
   }
 
   goTo("identity");
-};
+});
 
-document.getElementById("nextQuestion").onclick = () => {
+on("nextQuestion", () => {
   for (let i = 1; i <= 10; i++) {
     answers["q" + i] = document.getElementById("answer" + i).value;
   }
 
   goTo("question2");
-};
+});
 
-document.getElementById("backQuestion").onclick = () => {
+on("backQuestion", () => {
   for (let i = 11; i <= 20; i++) {
     const field = document.getElementById("answer" + i);
     if (field) answers["q" + i] = field.value;
   }
 
   goTo("question1");
-};
+});
 
-document.getElementById("backFromLoading").onclick = () => {
+on("backFromLoading", () => {
   goTo("question2");
-};
+});
 
-document.getElementById("submitForm").onclick = async () => {
+on("submitForm", async () => {
   for (let i = 11; i <= 20; i++) {
     answers["q" + i] = document.getElementById("answer" + i).value;
   }
@@ -157,5 +166,4 @@ document.getElementById("submitForm").onclick = async () => {
   setTimeout(() => {
     showPage("finish");
   }, 2000);
-};
-    
+});
